@@ -14,21 +14,24 @@ Adapting this code to other BIDS datasets used in other challenges should requir
   for more information on how to use these.
 - Importing your desired metrics into `settings.py` and adding them to the `ScoringFunctions` dictionary.
 
-## Setting
+## Setting Tutorial
 ### Data Setting
-`external_dataset/TaskName/imagesTs/XXX_0000_0000.nii.gz` for ADC dataset  
-`external_dataset/TaskName/imagesTs/XXX_0000_0001.nii.gz` for DWI dataset  
-`external_dataset/TaskName/labelsTs/XXX_0000.nii.gz` for Label dataset (if exist)
+Provided that the requested Test dataset is located in the correct folder (external_dataset/TaskXXX_MYTASK).  
+The modalities (ADC, DWI) in the test dataset used must be named in the correct format:  
+`external_dataset/TaskXXX_MYTASK/imagesTs/XXX_0000_0000.nii.gz`: for ADC dataset  
+`external_dataset/TaskXXX_MYTASK/imagesTs/XXX_0000_0001.nii.gz`: for DWI dataset  
+`external_dataset/TaskXXX_MYTASK/labelsTs/XXX_0000.nii.gz`: for Label dataset (if exist)
 
 ### Trained Model Setting
-trained models can be find in [link](https://lab.loopback.kr:50443/pub/nnUNet_model.tar)  
-trained models should be positioned in `nnUNet_model/` folder  
+The trained models can be found at [link](https://lab.loopback.kr:50443/pub/nnUNet_model.tar)  
+The trained models should be located in the `nnUNet_model/` folder:  
+  
 e.g.
-`nnUNet_model/3d_fullres_dwi_tf_mt` model for DWI with transfer learning & multi-tasking  
-`nnUNet_model/3d_fullres_adc_dwi_tf_t2` model for ADC+DWI with transfer learning  
+`nnUNet_model/3d_fullres_dwi_tf_mt`: model for DWI with transfer learning & multi-tasking  
+`nnUNet_model/3d_fullres_adc_dwi_tf_t2`: model for ADC+DWI with transfer learning  
 
 ### Inference  
-Inference should be runed with following sequence of codes.  
-`bash run.sh TASKNAME 4`  # code for DWI with transfer learning & multi-tasking  
-`bash run.sh TASKNAME 6`  # code for ADC+DWI with transfer learning  
-`bash run.sh TASKNAME 10` # code for ensemble  
+The inference step consists of running the following sequence of code:  
+`bash run.sh TaskXXX_MYTASK 4`: code for DWI with transfer learning & multi-tasking  
+`bash run.sh TaskXXX_MYTASK 6`: code for ADC+DWI with transfer learning  
+`bash run.sh TaskXXX_MYTASK 10`: code for ensemble  
