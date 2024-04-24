@@ -22,16 +22,14 @@ The modalities (ADC, DWI) in the test dataset used must be named in the correct 
 `external_dataset/TaskXXX_MYTASK/imagesTs/XXX_0000_0001.nii.gz`: for DWI dataset  
 `external_dataset/TaskXXX_MYTASK/labelsTs/XXX_0000.nii.gz`: for Label dataset (if exist)
 
-### Trained Model Setting
-The trained models can be found at [link](https://lab.loopback.kr:50443/pub/nnUNet_model.tar)  
-The trained models should be located in the `nnUNet_model/` folder:  
-  
-e.g.
-`nnUNet_model/3d_fullres_dwi_tf_mt`: model for DWI with transfer learning & multi-tasking  
-`nnUNet_model/3d_fullres_adc_dwi_tf_t2`: model for ADC+DWI with transfer learning  
-
 ### Inference  
 The inference step consists of running the following sequence of code:  
 `bash run.sh TaskXXX_MYTASK 4`: code for DWI with transfer learning & multi-tasking  
 `bash run.sh TaskXXX_MYTASK 6`: code for ADC+DWI with transfer learning  
 `bash run.sh TaskXXX_MYTASK 10`: code for ensemble  
+
+### Weights trained by our proposed method
+* Download: [OneDrive](https://1drv.ms/f/c/de011cb09ae2716d/Eva2LhBp1ZlKt7xvml5-pLEBwWa6p_Q_X010kX5SUwN9OQ?e=QRd9xK)
+* 3d_fullres_dwi_tf_mt.zip: Single-modality(DWI) model weight with trainsfer & multi-task learning
+* 3d_fullres_adc_dwi_tf_t2.zip: Multi-modality(ADC+DWI) model weight with transfer learning
+* The trained models should be located in the `nnUNet_model/` folder
